@@ -1,7 +1,7 @@
 <template>
     <v-layout row>
         <v-text-field
-                label="New message"
+                label="New joke"
                 placeholder="Write something"
                 v-model="text"></v-text-field>
         <v-btn @click="save">
