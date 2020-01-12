@@ -11,7 +11,9 @@ module.exports = {
         port: 8000,
         allowedHosts: [
             'localhost:9000'
-        ]
+        ],
+        stats: 'errors-only',
+        clientLogLevel: 'error',
     },
     module: {
         rules: [
@@ -35,7 +37,6 @@ module.exports = {
         new VueLoaderPlugin()
     ],
     resolve: {
-        extensions: ['.js', '.ts', '.vue'],
         modules: [
             path.join(__dirname, 'src', 'main', 'resources', 'static', 'js'),
             path.join(__dirname, 'node_modules'),
