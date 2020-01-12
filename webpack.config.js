@@ -30,6 +30,13 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader'
+                ]
             }
         ]
     },
@@ -37,6 +44,7 @@ module.exports = {
         new VueLoaderPlugin()
     ],
     resolve: {
+        extensions: ['.js', '.ts', '.vue'],
         modules: [
             path.join(__dirname, 'src', 'main', 'resources', 'static', 'js'),
             path.join(__dirname, 'node_modules'),
