@@ -1,5 +1,5 @@
 <template>
-    <v-layout row>
+    <v-layout>
         <v-text-field
                 label="New joke"
                 placeholder="Write something"

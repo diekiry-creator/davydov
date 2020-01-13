@@ -1,11 +1,10 @@
 <template>
-    <v-layout row>
+    <v-layout class="px-3">
         <v-text-field
                 label="Add comment"
                 placeholder="Write something"
                 v-model="text"
-                @keyup.enter="save"
-        />
+                @keyup.enter="save"></v-text-field>
         <v-btn @click="save">
             Add
         </v-btn>

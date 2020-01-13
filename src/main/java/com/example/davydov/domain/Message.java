@@ -1,10 +1,8 @@
 package com.example.davydov.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.annotation.*;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -14,6 +12,7 @@ import java.util.List;
 @Table
 @ToString(of = {"id", "text"})
 @EqualsAndHashCode(of = {"id"})
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class)
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,21 +35,14 @@ public class Message {
     @JsonView(Views.FullMessage.class)
     private List<Comment> comments;
 
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
+    @JsonView(Views.FullMessage.class)
+    private String link;
+    @JsonView(Views.FullMessage.class)
+    private String linkTitle;
+    @JsonView(Views.FullMessage.class)
+    private String linkDescription;
+    @JsonView(Views.FullMessage.class)
+    private String linkCover;
 
     public Long getId() {
         return id;
@@ -76,14 +68,21 @@ public class Message {
         this.creationDate = creationDate;
     }
 
-    @JsonView(Views.FullMessage.class)
-    private String link;
-    @JsonView(Views.FullMessage.class)
-    private String linkTitle;
-    @JsonView(Views.FullMessage.class)
-    private String linkDescription;
-    @JsonView(Views.FullMessage.class)
-    private String linkCover;
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
 
     public String getLink() {
         return link;
