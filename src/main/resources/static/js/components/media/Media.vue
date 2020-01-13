@@ -1,5 +1,5 @@
 <template>
-    <v-card>
+    <v-card-text>
         <v-flex v-if="type === 'href'" xs12 sm6 offset-sm3>
             <v-img v-if="message.linkCover" :src="message.linkCover" aspect-ratio="2.75"></v-img>
             <v-card-title>
@@ -20,7 +20,7 @@
         <v-flex v-if="type === 'youtube'" xs12 sm6 offset-sm3>
             <you-tube :src="message.link"></you-tube>
         </v-flex>
-    </v-card>
+    </v-card-text>
 </template>
 
 <script>
