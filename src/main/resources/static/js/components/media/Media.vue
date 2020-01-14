@@ -17,7 +17,7 @@
                 {{message.link}}
             </a>
         </v-flex>
-        <v-flex v-if="type === 'youtube'" xs12 sm6 offset-sm3>
+        <v-flex v-if="type === 'youtube'" >
             <you-tube :src="message.link"></you-tube>
         </v-flex>
     </v-card-text>

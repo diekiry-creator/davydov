@@ -1,7 +1,8 @@
 <template>
     <v-container>
-        <v-layout align-space-around justify-start column>
-            <message-form :messageAttr="message"></message-form>
+        <message-form :messageAttr="message"></message-form>
+        <v-layout align-center justify-flex-start row>
+
             <message-row v-for="message in sortedMessages"
                          :key="message.id"
                          :message="message"

@@ -1,23 +1,25 @@
 
 <template>
     <v-app>
-        <v-app-bar app>
-            <v-toolbar-title color="grey darken-4">J<v-icon medium color="grey darken-4">mood</v-icon>KER'S TRAP</v-toolbar-title>
+        <v-app-bar app color="pink">
+            <v-toolbar-title>J<v-icon medium color="black">mood</v-icon>KER'S TRAP</v-toolbar-title>
             <v-btn text
                    v-if="profile"
                    :disabled="$route.path === '/'"
-                   @click="showMessages">
+                   @click="showMessages"
+                   color="white">
                 Jokes
             </v-btn>
             <v-spacer></v-spacer>
             <v-btn text
                    v-if="profile"
                    :disabled="$route.path === '/profile'"
-                   @click="showProfile">
+                   @click="showProfile"
+                   color="white">
                 {{profile.name}}
             </v-btn>
             <v-btn v-if="profile" icon href="/logout">
-                <v-icon>exit_to_app</v-icon>
+                <v-icon color="white" >exit_to_app</v-icon>
             </v-btn>
         </v-app-bar>
         <v-content>

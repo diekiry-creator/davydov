@@ -4,8 +4,9 @@
                 label="Add comment"
                 placeholder="Write something"
                 v-model="text"
-                @keyup.enter="save"></v-text-field>
-        <v-btn @click="save">
+                @keyup.enter="save"
+                color="pink"></v-text-field>
+        <v-btn @click="save" color="pink">
             Add
         </v-btn>
     </v-layout>

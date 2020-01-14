@@ -1,5 +1,5 @@
 <template>
-    <v-card class="my-2">
+    <v-card class="my-2 mx-2" width="30%" heigth="100%">
         <v-card-text primary-title>
             <div>
                 <v-avatar
@@ -24,6 +24,9 @@
             <div class="pt-3">
                 {{ message.text }}
             </div>
+
+
+
         </v-card-text>
         <media v-if="message.link" :message="message"></media>
         <v-card-actions>
